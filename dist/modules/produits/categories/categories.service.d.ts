@@ -1,0 +1,31 @@
+import { CreateCategoryDto } from './dto/create-category.dto';
+import { UpdateCategoryDto } from './dto/update-category.dto';
+import { Category } from './entities/category.entity';
+import { Model } from 'mongoose';
+import { PageOptionsDto } from 'src/helpers/page-options-dto/page-options-dto';
+import { ResponseI18nService } from 'src/helpers/translate/server-response/response-i18n.service';
+import { FilterConsumptionModeDto, FilterStockDto, FilterTypeCategoryDto } from 'src/common/filter/filter.dto';
+import { AppHelperService } from 'src/helpers/app.helper.service';
+import { TarrificationService } from 'src/modules/bases/tarrification/tarrification.service';
+import { VerificationService } from 'src/modules/verification.service';
+export declare class CategoriesService {
+    private readonly categoryDocument;
+    private readonly tarificationService;
+    private readonly appHelperService;
+    private readonly verificationService;
+    private readonly responseI18nService;
+    private readonly logger;
+    constructor(categoryDocument: Model<Category>, tarificationService: TarrificationService, appHelperService: AppHelperService, verificationService: VerificationService, responseI18nService: ResponseI18nService);
+    private beforeCreateOrUpdate;
+    create(dto: CreateCategoryDto): Promise<any>;
+    findAll(pageOptionsDto: PageOptionsDto): Promise<any>;
+    getdropDownForCategory(type: FilterTypeCategoryDto, stock: FilterStockDto): Promise<any>;
+    getCategoryByTarif(filter_mode: FilterConsumptionModeDto, stock: FilterStockDto): Promise<any>;
+    categoryDropDown(stock?: FilterStockDto): Promise<any>;
+    findOne(id: string): Promise<any>;
+    update(categoryId: string, updateCategoryDto: UpdateCategoryDto): Promise<any>;
+    remove(id: string): Promise<any>;
+    private formatCategoryData;
+    private filterResults;
+    validateAccompagnements(ids?: string[]): Promise<any[]>;
+}

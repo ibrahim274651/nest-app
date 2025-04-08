@@ -1,0 +1,32 @@
+import { Model } from 'mongoose';
+import { Catalogue } from './entities/catalogue.entity';
+import { CreateCatalogueDto, DeleteImageDto, OtherImageDto } from './dto/create-catalogue.dto';
+import { UpdateCatalogueDto } from './dto/update-catalogue.dto';
+import { ResponseI18nService } from 'src/helpers/translate/server-response/response-i18n.service';
+import { PageOptionsDto } from 'src/helpers/page-options-dto/page-options-dto';
+import { AppHelperService } from 'src/helpers/app.helper.service';
+import { VerificationService } from 'src/verification.service';
+export declare class CatalogueService {
+    private readonly catalogueDocument;
+    private readonly responseI18nService;
+    private readonly verificationService;
+    private readonly appHelperService;
+    private readonly logger;
+    private ipAddress;
+    private port;
+    private baseUrl;
+    constructor(catalogueDocument: Model<Catalogue>, responseI18nService: ResponseI18nService, verificationService: VerificationService, appHelperService: AppHelperService);
+    create(createCatalogueDto: CreateCatalogueDto, files: Express.Multer.File[]): Promise<any>;
+    findAll(pageOptionsDto: PageOptionsDto): Promise<any>;
+    dropDownForCatalogue(): Promise<any>;
+    findOne(id: string): Promise<any>;
+    update(id: string, updateCatalogueDto: UpdateCatalogueDto, files: Express.Multer.File[]): Promise<any>;
+    remove(id: string): Promise<any>;
+    addImageToOtherImage(id: string, otherImageDto: OtherImageDto, files: Express.Multer.File[]): Promise<any>;
+    deleteImageFromOtherImage(id: string, dto: DeleteImageDto): Promise<any>;
+    private validateFiles;
+    private mapFileUrls;
+    private handleCatalogueNotFound;
+    private updateCatalogueImages;
+    private handleError;
+}

@@ -1,0 +1,43 @@
+import { CreateArticleDto } from './dto/create-article.dto';
+import { UpdateArticleDto } from './dto/update-article.dto';
+import { Article } from './entities/article.entity';
+import { Model } from 'mongoose';
+import { PageOptionsDto } from 'src/helpers/page-options-dto/page-options-dto';
+import { FabricationService } from '../fabrication/fabrication.service';
+import { CatalogueService } from '../catalogue/catalogue.service';
+import { CategoriesService } from '../categories/categories.service';
+import { ResponseI18nService } from 'src/helpers/translate/server-response/response-i18n.service';
+import { FilterStockDto, FilterCategoryDto, FilterStoreDto } from 'src/common/filter/filter.dto';
+import { AppHelperService } from 'src/helpers/app.helper.service';
+import { ApiResponse } from 'src/helpers/translate/types/i18n.types';
+import { TarrificationService } from 'src/modules/bases/tarrification/tarrification.service';
+import { TvaService } from 'src/modules/bases/tva/tva.service';
+import { VerificationService } from 'src/modules/verification.service';
+export declare class ArticlesService {
+    private readonly itemModel;
+    private readonly categoriesService;
+    private readonly catalogueService;
+    private readonly fabricationService;
+    private readonly responseI18nService;
+    private readonly tarificationService;
+    private readonly tvaService;
+    private readonly verificationService;
+    private readonly appHelperService;
+    private readonly logger;
+    constructor(itemModel: Model<Article>, categoriesService: CategoriesService, catalogueService: CatalogueService, fabricationService: FabricationService, responseI18nService: ResponseI18nService, tarificationService: TarrificationService, tvaService: TvaService, verificationService: VerificationService, appHelperService: AppHelperService);
+    private beforeCreateOrUpdate;
+    create(dataDto: CreateArticleDto): Promise<any>;
+    findAll(filterStockDto: FilterStockDto, category: FilterCategoryDto, pageOptionsDto: PageOptionsDto): Promise<any>;
+    findItemByCategory(categoryId: string, stock?: FilterStockDto): Promise<ApiResponse<Article>>;
+    dropDownCategoryItems(stock?: FilterStockDto): Promise<any>;
+    findOne(id: string): Promise<any>;
+    findOneStockTrue(data: {
+        _id: string;
+        stock: boolean;
+    }): Promise<any>;
+    update(id: string, dataDto: UpdateArticleDto): Promise<any>;
+    remove(id: string): Promise<any>;
+    findItemsByStore(store?: FilterStoreDto): Promise<any>;
+    private formatItemsData;
+    private transformResults;
+}

@@ -1,0 +1,30 @@
+import { Model } from 'mongoose';
+import { ResponseI18nService } from 'src/helpers/translate/server-response/response-i18n.service';
+import { Promotion } from './bases/promotions/entities/promotion.entity';
+import { Tarrification } from './bases/tarrification/entities/tarrification.entity';
+import { Accompagnement } from './produits/accompagnements/entities/accompagnement.entity';
+import { Article } from './produits/articles/entities/article.entity';
+import { Category } from './produits/categories/entities/category.entity';
+import { Cuisson } from './produits/cuissons/entities/cuisson.entity';
+import { Menu } from './produits/menus/entities/menu.entity';
+export declare class VerificationService {
+    private categoryModel;
+    private itemModel;
+    private accModel;
+    private menuModel;
+    private cuissonModel;
+    private tarModel;
+    private promoModel;
+    private readonly responseI18nService;
+    private readonly logger;
+    constructor(categoryModel: Model<Category>, itemModel: Model<Article>, accModel: Model<Accompagnement>, menuModel: Model<Menu>, cuissonModel: Model<Cuisson>, tarModel: Model<Tarrification>, promoModel: Model<Promotion>, responseI18nService: ResponseI18nService);
+    isCatalogueUsed(id: string): Promise<void>;
+    checkImageUsage(imageUrl: string): Promise<void>;
+    isCategoryUsed(id: string): Promise<void>;
+    isTvaUsed(id: string): Promise<void>;
+    isTarificationUsed(id: string): Promise<void>;
+    isFabricationUsed(id: string): Promise<void>;
+    isUniteUsed(id: string): Promise<void>;
+    isItemUsed(id: string): Promise<void>;
+    isMenuStageUsed(id: string): Promise<void>;
+}
