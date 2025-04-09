@@ -1,14 +1,13 @@
-import mongoose, { Document } from 'mongoose';
-import { Catalogue } from 'src/modules/produits/catalogue/entities/catalogue.entity';
+import { Document, Types } from 'mongoose';
 export declare class NestedCatalog extends Document {
-    id: Catalogue;
+    id: Types.ObjectId;
     image: string;
 }
-export declare const NestedCatalogSchema: mongoose.Schema<NestedCatalog, mongoose.Model<NestedCatalog, any, any, any, mongoose.Document<unknown, any, NestedCatalog> & NestedCatalog & Required<{
+export declare const NestedCatalogSchema: import("mongoose").Schema<NestedCatalog, import("mongoose").Model<NestedCatalog, any, any, any, Document<unknown, any, NestedCatalog> & NestedCatalog & Required<{
     _id: unknown;
 }> & {
     __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, NestedCatalog, mongoose.Document<unknown, {}, mongoose.FlatRecord<NestedCatalog>> & mongoose.FlatRecord<NestedCatalog> & Required<{
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, NestedCatalog, Document<unknown, {}, import("mongoose").FlatRecord<NestedCatalog>> & import("mongoose").FlatRecord<NestedCatalog> & Required<{
     _id: unknown;
 }> & {
     __v: number;

@@ -1,6 +1,6 @@
 import { INestApplication } from '@nestjs/common';
 export declare function getCustomSwaggerOptions(app: INestApplication): {
-    customSiteTitle: any;
+    customSiteTitle: string;
     swaggerOptions: {
         docExpansion: string;
         defaultModelsExpandDepth: number;

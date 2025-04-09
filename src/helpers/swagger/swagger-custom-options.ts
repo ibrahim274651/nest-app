@@ -1,11 +1,10 @@
-import { SwaggerConstants } from '@/app.constants';
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { INestApplication } from '@nestjs/common';
+import { SwaggerConstants } from 'src/app.constants';
 
 export function getCustomSwaggerOptions(app: INestApplication) {
   return {
     customSiteTitle: SwaggerConstants.customTitle,
-    // customJs: '../../swagger-custom.js',
-    // customCssUrl: '../../swagger-custom.css',
     swaggerOptions: {
       docExpansion: 'list',
       defaultModelsExpandDepth: 1,

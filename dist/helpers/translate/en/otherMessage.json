@@ -1,0 +1,95 @@
+{
+  "PAGINATION": "Invalid pagination options provided",
+  "GENERAL": {
+    "badRequest": "Loading...",
+    "notFound": "No {entity}(s) found.",
+    "invalidId": "Invalid {entity} ID.",
+    "unmatch": "The chosen {entity} does not correspond to any data.",
+    "notFoundManyData": "One or more {entity} not found."
+  },
+  "FISCAL": {
+    "invalidId": "Fiscal year not found. It should be configured first.",
+    "validateYear": "The provided date {checkDate} is outside the fiscal year range {startDate} - {endDate})."
+  },
+  "CATALOGUE": {
+    "invalidId": "Invalid catalog ID.",
+    "inUsed": "This catalogue is in use and cannot be deleted.",
+    "inUsedWithModels": "This catalogue image is in use in the following pages/models: {{models}} and cannot be deleted."
+  },
+  "TVA": {
+    "badRequest": "No tvas found.",
+    "notFound": "One or more tvas not found.",
+    "invalidId": "Invalid tva ID."
+  },
+  "CUISSON": {
+    "badRequest": "No tvas found.",
+    "notFound": "One or more tvas not found.",
+    "invalidId": "Invalid tva ID."
+  },
+  "PROMOTION": {
+    "NOTFOUND": "Invalid promotion ID.",
+    "PROMOTION_EXIST": "A promotion with the same dates already exists.",
+    "DATE_VALIDATION": "End date must be a future date and greater than start date.",
+    "DATE_REQUIRED": "The start date and end date are mandatory for a limited-time promotion.",
+    "BONUS_REQUIRED": "The bonus must be greater than 0 when 'offered' is enabled."
+  },
+  "TARIFICATION": {
+    "required": "Tarification is required.",
+    "badRequest": "No tarifications found.",
+    "notFound": "One or more tarifications not found.",
+    "invalidIds": "Tarification(s) with ID(s) {{_id}.join(', ')} not found.",
+    "invalidId": "Invalid tarification ID."
+  },
+  "FABRICATION": {
+    "badRequest": "No fabrications found.",
+    "notFound": "One or more fabrications not found.",
+    "invalidId": "Invalid fabrication ID."
+  },
+  "CATEGORIE": {
+    "unmatch": "The chosen category does not correspond to any {entity}."
+  },
+  "ARTICLE": {
+    "unmatch": "The chosen category does not correspond to any item.",
+    "prixTTC": "Selling price must be a positive number.",
+    "price": "Selling price must be greater than purchase price.",
+    "invalid_items": "Articles invalides : {{entity}}",
+    "vat": "The VAT rate must be a positive number."
+  },
+  "ACCOMPAGNEMENT": {
+    "unmatch": "The chosen add-on does not correspond to any item.",
+    "notFound": "One or more add-ons not found."
+  },
+  "MENU": {
+    "unmatch": "The chosen menu does not correspond to any item.",
+    "tarification": {
+      "generic": "The prixTTC and prixHT must be greater than zero ."
+    }
+  },
+  "STOCK": {
+    "MINI": "Stock mini must be greater than zero"
+  },
+  "TRANSFERT": {
+    "update_failed": "You cannot update this transfer because it has already been approved.",
+    "delete_failed": "You cannot delete this transfer because it has already been processed.",
+    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
+    "invalid_status": "The provided status is invalid.",
+    "partial_received": "The transfer has been partially received.",
+    "insufficient_stock": "Insufficient stock for transfer."
+  },
+  "PURCHASE_REQUEST": {
+    "update_failed": "You cannot update this purchase request because it has already been approved.",
+    "delete_failed": "You cannot delete this purchase request because it has already been processed.",
+    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
+    "invalid_status": "The provided status is invalid.",
+    "partial_received": "The purchase request has been partially received.",
+    "insufficient_stock": "Insufficient stock for purchase request."
+  },
+  "SUPPLIER": {
+    "update_failed": "You cannot update this invoice  because it has already been approved.",
+    "delete_failed": "You cannot delete this invoice  because it has already been processed.",
+    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
+    "invalid_status": "The provided status is invalid.",
+    "partial_received": "The invoice supplier has been partially received.",
+    "insufficient_stock": "Insufficient stock for invoice ."
+  }
+}

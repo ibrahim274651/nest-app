@@ -1,4 +1,4 @@
-import { SwaggerConstants } from '@/app.constants';
+import { SwaggerConstants } from 'src/app.constants';
 import { getServerIp } from '../app.helper.service';
 import { SwaggerConfig } from './swagger.interface';
 

@@ -1,26 +1,19 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsMongoId, IsOptional } from 'class-validator';
-import mongoose, { Document } from 'mongoose';
-import { Article } from '@/modules/produits/articles/entities/article.entity';
-import { MenuStage } from '@/modules/produits/menu-stage/entities/menu-stage.entity';
+import { Document, Types } from 'mongoose';
 
 @Schema({ _id: false })
 export class Niveaux extends Document {
-  @Prop({
-    type: mongoose.Schema.Types.ObjectId,
-    ref: MenuStage.name,
-    required: false,
-  })
-  niveauId: MenuStage;
+  @Prop({ type: Types.ObjectId, required: false })
+  niveauId: Types.ObjectId;
 
   @Prop({
-    type: [mongoose.Schema.Types.ObjectId],
+    type: [Types.ObjectId],
     required: false,
-    ref: Article.name,
     default: [],
   })
-  articleIds: Article[];
+  articleIds: Types.ObjectId[];
 }
 
 export const NiveauxSchema = SchemaFactory.createForClass(Niveaux);

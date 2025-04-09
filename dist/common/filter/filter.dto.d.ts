@@ -1,4 +1,4 @@
-import { GlobalStatus, ConsumptionMode } from '@/utils/enumerations.enum';
+import { ConsumptionMode } from 'src/utils/enumerations.enum';
 export declare class FilterStockDto {
     enable: boolean;
 }
@@ -14,17 +14,8 @@ export declare class FilterItemDto {
 export declare class FilterStoreDto {
     readonly storeId?: string;
 }
-export declare class FilterMovementDto {
-    typeMouvement: string;
-}
-export declare class FilterOperationDto {
-    typeOperation?: string;
-}
 export declare class FilterTypeCategoryDto {
     typeFamille: string;
-}
-export declare class FilterGlobalStatusDto {
-    status?: GlobalStatus;
 }
 export declare class FilterConsumptionModeDto {
     tarificationId?: string;
@@ -36,14 +27,4 @@ export declare class FilterForTarificationDto {
     enable: boolean;
     tarificationId?: string;
     mode?: ConsumptionMode;
-    readonly storeId?: string;
-}
-export declare class FilterForItemDto {
-    readonly itemId?: string;
-    categoryId?: string;
-    enable: boolean;
-    visible: boolean;
-    tarificationId?: string;
-    mode?: ConsumptionMode;
-    readonly storeId?: string;
 }

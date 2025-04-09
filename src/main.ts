@@ -6,16 +6,13 @@ import mongoose from 'mongoose';
 import { GlobalExceptionFilter } from './helpers/filter/custom.exception';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';
 import { MonitoringInterceptor } from './helpers/monitoring/monitoring.interceptor';
-import { swaggerConfiguration, swaggerLogger } from './helpers/swagger/swagger';
-import { GrpcExceptionFilter } from './grpc/exception/grpc-exception.filter';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { swaggerConfiguration } from './helpers/swagger/swagger';
 
 async function bootstrap() {
-  const PORT = process.env.PORT || 3015;
+  const PORT = process.env.PORT ?? 5000;
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  const loggerInstance = new Logger('Bootstrap');
   const corsOptions: CorsOptions = {
     origin: '*',
     methods: '*',
@@ -31,12 +28,12 @@ async function bootstrap() {
     new ValidationPipe({
       transform: true,
       whitelist: true,
-      // forbidNonWhitelisted: true,
-      // forbidUnknownValues: true,
+      forbidNonWhitelisted: true,
+      forbidUnknownValues: true,
     }),
   );
   app.useGlobalInterceptors(new MonitoringInterceptor());
-  app.useGlobalFilters(new GrpcExceptionFilter(), new GlobalExceptionFilter());
+  app.useGlobalFilters(new GlobalExceptionFilter());
   app.setGlobalPrefix(process.env.URL_PREFIX || 'api');
   app.enableCors(corsOptions);
   app.use(json({ limit: '50mb' }));
@@ -44,20 +41,9 @@ async function bootstrap() {
     // prefix: '/uploads',
   });
 
-  app.connectMicroservice<MicroserviceOptions>({
-    transport: Transport.GRPC,
-    options: {
-      url: 'localhost:50051',
-      package: 'stock',
-      protoPath: join(__dirname, 'grpc/proto/stock.proto'),
-    },
-  });
-  app.startAllMicroservices();
-
   await app.listen(PORT, () => {
     console.log('Port is listining on :', PORT);
-    swaggerLogger(loggerInstance);
   });
 }
 
-bootstrap();
+void bootstrap();

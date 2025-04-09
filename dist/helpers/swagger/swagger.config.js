@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SWAGGER_CONFIG = void 0;
-const app_constants_1 = require("@/app.constants");
+const app_constants_1 = require("../../app.constants");
 const app_helper_service_1 = require("../app.helper.service");
 const ipAddress = (0, app_helper_service_1.getServerIp)();
 const swaggerPath = process.env.URL_PREFIX || 'default-path';

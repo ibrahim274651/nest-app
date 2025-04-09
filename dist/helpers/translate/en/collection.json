@@ -1,0 +1,48 @@
+{
+  "ENTITY": {
+    "TVA": "Vat",
+    "TARIFICATION": "Tarification",
+    "PROMOTION": "Promotion",
+    "CATEGORY": "Category",
+    "CUISSON": "Cuisson",
+    "categories": "Category",
+    "CATALOGUE": "Catalogue",
+    "ARTICLE": "Item",
+    "MENU_STAGE": "Menu stage",
+    "MENU": "Menu",
+    "ACCOMPAGNEMENT": "Add-on",
+    "FABRICATION": "Fabrication",
+    "STORE": "Store",
+    "FROM_STORE": "Source Store",
+    "TO_STORE": "Destination Store",
+    "FOURNISSEUR": "Supplier",
+    "UNITE_MESURE": "Unit of measure",
+    "MOVEMENT_ENTREE": "Stock movement in",
+    "MOVEMENT_SORTIE": "Stock movement out",
+    "MOVEMENT_DETAIL": "Stock movement detail",
+    "INVENTAIRE": "Inventory",
+    "INVENTAIRE_DETAIL": "Inventory detail",
+    "TRANSFERT": "Transfer",
+    "PURCHASE_REQUEST": "Purchase request",
+    "PURCHASE_REQUEST_DETAIL": "Purchase request detail",
+    "SUPPLIER_INVOICE": "Supplier Invoice",
+    "INVOICE_ITEM": "Invoice Item"
+  },
+
+  "FIELD": {
+    "FILE": "file",
+    "_id": "id",
+    "designation": "designation",
+    "tarification": "tarification",
+    "codeBarre": "code barre",
+    "nif": "TIN",
+    "fax": "fax",
+    "email": "email",
+    "telephone": "phone number",
+    "prixttc": "prix TTC",
+    "prixht": "prix HT",
+    "quantity": "quantity",
+    "date": "date",
+    "time": "time"
+  }
+}

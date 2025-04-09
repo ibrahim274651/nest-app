@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getCustomSwaggerOptions = getCustomSwaggerOptions;
-const app_constants_1 = require("@/app.constants");
+const app_constants_1 = require("../../app.constants");
 function getCustomSwaggerOptions(app) {
     return {
         customSiteTitle: app_constants_1.SwaggerConstants.customTitle,

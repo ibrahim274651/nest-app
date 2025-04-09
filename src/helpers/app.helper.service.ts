@@ -3,7 +3,6 @@ import * as os from 'os';
 import { randomBytes, randomUUID } from 'crypto';
 import { Request } from 'express';
 import { JwtService } from '@nestjs/jwt';
-import { deleteFile } from './file-upload-validate/file-upload-validate';
 
 @Injectable()
 export class AppHelperService {
@@ -39,43 +38,6 @@ export class AppHelperService {
 
     return decodedToken.sub;
   }
-
-  decodeAccessToken(request: Request) {
-    try {
-      const accessToken = this.extractTokenFromRequest(request);
-      this.logger.debug('Access token extracted successfully');
-
-      const decodedToken = this.jwtService.decode(accessToken);
-      if (!decodedToken) {
-        throw new UnauthorizedException('Invalid access token');
-      }
-
-      const userInfo = {
-        userId: decodedToken['sub'],
-        name: decodedToken['name'],
-        email: decodedToken['email'],
-        username: decodedToken['preferred_username'],
-        givenName: decodedToken['given_name'],
-        familyName: decodedToken['family_name'],
-        roles: decodedToken['realm_access']?.['roles'] || [],
-      };
-
-      this.logger.debug('Access token decoded successfully', { userInfo });
-      return userInfo;
-    } catch (error) {
-      this.logger.error(
-        'Error decoding access token:',
-        error.message,
-        error.stack,
-      );
-      throw new UnauthorizedException('Failed to decode access token');
-    }
-  }
-
-  // generateReferenceNumber(prefix?: string, length?: number): string {
-  //   const randomValue = this.generateRandomNumber(length || this.defaultLength);
-  //   return `${prefix || this.defaultPrefix}-${randomValue}`;
-  // }
 
   generateReferenceNumber(prefix?: string, length?: number): string {
     const year = new Date().getFullYear();
@@ -125,21 +87,6 @@ export class AppHelperService {
     }));
   };
 
-  // singleImageUrl = <T extends Record<string, any>>(results: T[]): T[] => {
-  //   if (!Array.isArray(results)) return results;
-
-  //   return results.map((result) => ({
-  //     ...result,
-  //     catalogue: result.catalogue?.id
-  //       ? {
-  //         _id: result.catalogue.id._id,
-  //         designation: result.catalogue.id.designation,
-  //         image: this.baseUrl + (result.catalogue.image || ''),
-  //       }
-  //       : null,
-  //   }));
-  // };
-
   mapCatalogResponseWithImageUrl = (results: any) => {
     console.log(results);
 
@@ -166,30 +113,6 @@ export class AppHelperService {
       },
     };
   };
-
-  async removeImageUrl(data: any, imageUrl: string): Promise<string> {
-    if (!this.port) throw new Error('Server port is not configured');
-
-    if (!imageUrl.startsWith(this.baseUrl))
-      throw new Error('Invalid image URL format');
-
-    // Extract filename from URL
-    const urlImg = imageUrl.replace(this.baseUrl, '');
-
-    // Verify image exists in data
-    const imageIndex = data.images.indexOf(urlImg);
-    if (imageIndex === -1) throw new Error('Image not found in dataset');
-
-    // Remove from data array
-    data.images = data.images.filter(
-      (_: any, index: number) => index !== imageIndex,
-    );
-
-    // Delete physical file using the enhanced deleteFile
-    await deleteFile(urlImg);
-
-    return 'Image successfully removed from both dataset and filesystem';
-  }
 }
 
 export const codeGenerate = () => {

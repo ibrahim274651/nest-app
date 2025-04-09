@@ -16,7 +16,6 @@ const common_1 = require("@nestjs/common");
 const os = require("os");
 const crypto_1 = require("crypto");
 const jwt_1 = require("@nestjs/jwt");
-const file_upload_validate_1 = require("./file-upload-validate/file-upload-validate");
 let AppHelperService = AppHelperService_1 = class AppHelperService {
     jwtService;
     logger = new common_1.Logger(AppHelperService_1.name);
@@ -46,31 +45,6 @@ let AppHelperService = AppHelperService_1 = class AppHelperService {
             throw new common_1.UnauthorizedException('Invalid token or missing sub claim');
         }
         return decodedToken.sub;
-    }
-    decodeAccessToken(request) {
-        try {
-            const accessToken = this.extractTokenFromRequest(request);
-            this.logger.debug('Access token extracted successfully');
-            const decodedToken = this.jwtService.decode(accessToken);
-            if (!decodedToken) {
-                throw new common_1.UnauthorizedException('Invalid access token');
-            }
-            const userInfo = {
-                userId: decodedToken['sub'],
-                name: decodedToken['name'],
-                email: decodedToken['email'],
-                username: decodedToken['preferred_username'],
-                givenName: decodedToken['given_name'],
-                familyName: decodedToken['family_name'],
-                roles: decodedToken['realm_access']?.['roles'] || [],
-            };
-            this.logger.debug('Access token decoded successfully', { userInfo });
-            return userInfo;
-        }
-        catch (error) {
-            this.logger.error('Error decoding access token:', error.message, error.stack);
-            throw new common_1.UnauthorizedException('Failed to decode access token');
-        }
     }
     generateReferenceNumber(prefix, length) {
         const year = new Date().getFullYear();
@@ -138,19 +112,6 @@ let AppHelperService = AppHelperService_1 = class AppHelperService {
             },
         };
     };
-    async removeImageUrl(data, imageUrl) {
-        if (!this.port)
-            throw new Error('Server port is not configured');
-        if (!imageUrl.startsWith(this.baseUrl))
-            throw new Error('Invalid image URL format');
-        const urlImg = imageUrl.replace(this.baseUrl, '');
-        const imageIndex = data.images.indexOf(urlImg);
-        if (imageIndex === -1)
-            throw new Error('Image not found in dataset');
-        data.images = data.images.filter((_, index) => index !== imageIndex);
-        await (0, file_upload_validate_1.deleteFile)(urlImg);
-        return 'Image successfully removed from both dataset and filesystem';
-    }
 };
 exports.AppHelperService = AppHelperService;
 exports.AppHelperService = AppHelperService = AppHelperService_1 = __decorate([

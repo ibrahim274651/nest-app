@@ -2,17 +2,12 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import { IsMongoId, IsNumber } from 'class-validator';
-import mongoose, { Document } from 'mongoose';
-import { Fabrication } from '@/modules/produits/fabrication/entities/fabrication.entity';
+import { Document, Types } from 'mongoose';
 
 @Schema({ _id: false })
 export class NestedFabrication extends Document {
-  @Prop({
-    type: mongoose.Schema.Types.ObjectId,
-    ref: Fabrication.name,
-    required: false,
-  })
-  fabricationId: Fabrication;
+  @Prop({ type: Types.ObjectId, required: false })
+  fabricationId: Types.ObjectId;
 
   @Prop({ required: false, type: Number, default: 0 })
   quantite: number;
@@ -41,13 +36,11 @@ export class FabricationNestedDto {
   @ApiProperty({ example: 0.1, description: 'Quantity', type: 'number' })
   @IsNumber()
   @Type(() => Number)
-  @Transform(({ value }) => parseFloat(value))
   quantite: number;
 
   @ApiProperty({ example: 20, description: 'Part', type: 'number' })
   @IsNumber()
   @Type(() => Number)
-  @Transform(({ value }) => parseFloat(value))
   part: number;
 
   @ApiProperty({

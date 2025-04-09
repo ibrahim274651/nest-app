@@ -1,15 +1,14 @@
-import mongoose, { Document } from 'mongoose';
-import { Article } from 'src/modules/produits/articles/entities/article.entity';
+import { Document, Types } from 'mongoose';
 export declare class NestedArticle extends Document {
-    articleId: Article;
+    articleId: Types.ObjectId;
     achat: boolean;
     offert: boolean;
 }
-export declare const NestedArticleSchema: mongoose.Schema<NestedArticle, mongoose.Model<NestedArticle, any, any, any, mongoose.Document<unknown, any, NestedArticle> & NestedArticle & Required<{
+export declare const NestedArticleSchema: import("mongoose").Schema<NestedArticle, import("mongoose").Model<NestedArticle, any, any, any, Document<unknown, any, NestedArticle> & NestedArticle & Required<{
     _id: unknown;
 }> & {
     __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, NestedArticle, mongoose.Document<unknown, {}, mongoose.FlatRecord<NestedArticle>> & mongoose.FlatRecord<NestedArticle> & Required<{
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, NestedArticle, Document<unknown, {}, import("mongoose").FlatRecord<NestedArticle>> & import("mongoose").FlatRecord<NestedArticle> & Required<{
     _id: unknown;
 }> & {
     __v: number;

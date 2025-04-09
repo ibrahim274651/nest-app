@@ -8,14 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NestedArticleDto = exports.NestedArticleSchema = exports.NestedArticle = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const mongoose_2 = require("mongoose");
-const article_entity_1 = require("src/modules/produits/articles/entities/article.entity");
 let NestedArticle = class NestedArticle extends mongoose_2.Document {
     articleId;
     achat;
@@ -23,12 +21,8 @@ let NestedArticle = class NestedArticle extends mongoose_2.Document {
 };
 exports.NestedArticle = NestedArticle;
 __decorate([
-    (0, mongoose_1.Prop)({
-        type: mongoose_2.default.Schema.Types.ObjectId,
-        ref: article_entity_1.Article.name,
-        required: false,
-    }),
-    __metadata("design:type", typeof (_a = typeof article_entity_1.Article !== "undefined" && article_entity_1.Article) === "function" ? _a : Object)
+    (0, mongoose_1.Prop)({ type: mongoose_2.Types.ObjectId, required: false }),
+    __metadata("design:type", mongoose_2.Types.ObjectId)
 ], NestedArticle.prototype, "articleId", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true, type: Boolean, default: false }),

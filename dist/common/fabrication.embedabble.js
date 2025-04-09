@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FabricationNestedDto = exports.NestedFabricationSchema = exports.NestedFabrication = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
@@ -16,7 +15,6 @@ const swagger_1 = require("@nestjs/swagger");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
 const mongoose_2 = require("mongoose");
-const fabrication_entity_1 = require("@/modules/produits/fabrication/entities/fabrication.entity");
 let NestedFabrication = class NestedFabrication extends mongoose_2.Document {
     fabricationId;
     quantite;
@@ -25,12 +23,8 @@ let NestedFabrication = class NestedFabrication extends mongoose_2.Document {
 };
 exports.NestedFabrication = NestedFabrication;
 __decorate([
-    (0, mongoose_1.Prop)({
-        type: mongoose_2.default.Schema.Types.ObjectId,
-        ref: fabrication_entity_1.Fabrication.name,
-        required: false,
-    }),
-    __metadata("design:type", typeof (_a = typeof fabrication_entity_1.Fabrication !== "undefined" && fabrication_entity_1.Fabrication) === "function" ? _a : Object)
+    (0, mongoose_1.Prop)({ type: mongoose_2.Types.ObjectId, required: false }),
+    __metadata("design:type", mongoose_2.Types.ObjectId)
 ], NestedFabrication.prototype, "fabricationId", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: false, type: Number, default: 0 }),
@@ -69,14 +63,12 @@ __decorate([
     (0, swagger_1.ApiProperty)({ example: 0.1, description: 'Quantity', type: 'number' }),
     (0, class_validator_1.IsNumber)(),
     (0, class_transformer_1.Type)(() => Number),
-    (0, class_transformer_1.Transform)(({ value }) => parseFloat(value)),
     __metadata("design:type", Number)
 ], FabricationNestedDto.prototype, "quantite", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 20, description: 'Part', type: 'number' }),
     (0, class_validator_1.IsNumber)(),
     (0, class_transformer_1.Type)(() => Number),
-    (0, class_transformer_1.Transform)(({ value }) => parseFloat(value)),
     __metadata("design:type", Number)
 ], FabricationNestedDto.prototype, "part", void 0);
 __decorate([

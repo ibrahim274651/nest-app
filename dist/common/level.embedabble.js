@@ -8,33 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NiveauxDto = exports.NiveauxSchema = exports.Niveaux = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const mongoose_2 = require("mongoose");
-const article_entity_1 = require("@/modules/produits/articles/entities/article.entity");
-const menu_stage_entity_1 = require("@/modules/produits/menu-stage/entities/menu-stage.entity");
 let Niveaux = class Niveaux extends mongoose_2.Document {
     niveauId;
     articleIds;
 };
 exports.Niveaux = Niveaux;
 __decorate([
-    (0, mongoose_1.Prop)({
-        type: mongoose_2.default.Schema.Types.ObjectId,
-        ref: menu_stage_entity_1.MenuStage.name,
-        required: false,
-    }),
-    __metadata("design:type", typeof (_a = typeof menu_stage_entity_1.MenuStage !== "undefined" && menu_stage_entity_1.MenuStage) === "function" ? _a : Object)
+    (0, mongoose_1.Prop)({ type: mongoose_2.Types.ObjectId, required: false }),
+    __metadata("design:type", mongoose_2.Types.ObjectId)
 ], Niveaux.prototype, "niveauId", void 0);
 __decorate([
     (0, mongoose_1.Prop)({
-        type: [mongoose_2.default.Schema.Types.ObjectId],
+        type: [mongoose_2.Types.ObjectId],
         required: false,
-        ref: article_entity_1.Article.name,
         default: [],
     }),
     __metadata("design:type", Array)

@@ -1,0 +1,102 @@
+{
+  "CRUD": {
+    "CREATE": {
+      "SUCCESS": "{entity} a été créé avec succès.",
+      "ERROR": "Échec de la création de {entity}. Veuillez réessayer.",
+      "UNAUTHORIZED": "Vous n'êtes pas autorisé à créer {entity}.",
+      "VALIDATION_ERROR": "Échec de la validation lors de la création de {entity}. Veuillez vérifier les données saisies."
+    },
+    "READ": {
+      "SUCCESS": "Les données de {entity} ont été récupérées avec succès.",
+      "NOT_FOUND": "{entity} introuvable.",
+      "UNAUTHORIZED": "Vous n'êtes pas autorisé à consulter {entity}.",
+      "ERROR": "Une erreur s'est produite lors de la récupération de {entity}. Veuillez réessayer."
+    },
+    "UPDATE": {
+      "SUCCESS": "{entity} a été mis à jour avec succès.",
+      "NOT_FOUND": "Le {entity} que vous essayez de mettre à jour n'existe pas.",
+      "UNAUTHORIZED": "Vous n'êtes pas autorisé à mettre à jour {entity}.",
+      "ERROR": "Une erreur s'est produite lors de la mise à jour de {entity}. Veuillez réessayer.",
+      "VALIDATION_ERROR": "Échec de la validation lors de la mise à jour de {entity}. Veuillez vérifier les données saisies."
+    },
+    "DELETE": {
+      "SUCCESS": "{entity} a été supprimé avec succès.",
+      "NOT_FOUND": "Le {entity} que vous essayez de supprimer n'existe pas.",
+      "UNAUTHORIZED": "Vous n'êtes pas autorisé à supprimer {entity}.",
+      "ERROR": "Une erreur s'est produite lors de la suppression de {entity}. Veuillez réessayer.",
+      "CONFIRMATION": "Êtes-vous sûr de vouloir supprimer {entity} ?"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "SUCCESS": "Vous vous êtes connecté avec succès.",
+      "ERROR": "Échec de la connexion. Veuillez vérifier vos identifiants.",
+      "UNAUTHORIZED": "Identifiants invalides. Accès refusé."
+    },
+    "LOGOUT": {
+      "SUCCESS": "Vous vous êtes déconnecté avec succès.",
+      "ERROR": "Une erreur s'est produite lors de la déconnexion. Veuillez réessayer."
+    },
+    "FORBIDDEN": "Vous n'avez pas la permission d'accéder à cette ressource.",
+    "EXPIRED_TOKEN": "Votre session a expiré. Veuillez vous reconnecter."
+  },
+  "ROLES": {
+    "ACCESS_DENIED": "Accès refusé. Rôle requis : {role}.",
+    "MISSING_ROLE": "Vous n'avez pas les rôles nécessaires pour effectuer cette action."
+  },
+  "GENERAL_MESSAGES": {
+    "LOADING": "Chargement...",
+    "ACTION_SUCCESS": "Action effectuée avec succès.",
+    "ACTION_ERROR": "Une erreur s'est produite lors de l'exécution de l'action.",
+    "RETRY": "Veuillez réessayer.",
+    "LOADING_DATA": "Chargement des données de {entity}...",
+    "RETRY_ACTION": "Réessayer",
+    "REFRESH_DATA": "Actualiser les données",
+    "ACTION_FAILED": "L'action n'a pas pu être réalisée.",
+    "NO_RESULTS_FOUND": "Aucun résultat trouvé."
+  },
+  "VALIDATION": {
+    "REQUIRED": "{field} est requis.",
+    "INVALID": "{field} est invalide.",
+    "MIN_LENGTH": "{field} doit comporter au moins {min} caractères.",
+    "MAX_LENGTH": "{field} doit comporter au maximum {max} caractères."
+  },
+
+  "FETCH": {
+    "SUCCESS": "Les données de {entity} ont été récupérées avec succès.",
+    "EMPTY": "Aucune donnée de {entity} disponible.",
+    "PARTIAL_SUCCESS": "Certaines données de {entity} n'ont pas pu être récupérées.",
+    "ERROR": "Une erreur s'est produite lors de la récupération des données de {entity}. Veuillez réessayer.",
+    "UNAUTHORIZED": "Vous n'êtes pas autorisé à consulter les données de {entity}.",
+    "NOT_FOUND": "Données de {entity} introuvables.",
+    "VALIDATION_ERROR": "Paramètres de requête invalides lors de la récupération des données de {entity}."
+  },
+  "ERRORS": {
+    "GENERAL": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+    "INVALID_INPUT": "Données saisies invalides. Veuillez vérifier vos données.",
+    "INVALID_ID": "Format d'ID invalide : {id}. Veuillez fournir un ID valide.",
+    "NOT_FOUND": "La ressource demandée est introuvable.",
+    "UNAUTHORIZED": "Vous n'avez pas la permission d'accéder à cette ressource.",
+    "FORBIDDEN": "L'accès à cette opération est interdit.",
+    "CONNECTION": "Impossible de se connecter au serveur. Veuillez vérifier votre réseau et réessayer.",
+    "TIMEOUT": "La requête a expiré. Veuillez réessayer.",
+    "SERVER_ERROR": "Erreur interne du serveur. Veuillez contacter le support.",
+    "CONFLICT": "Le champ '{field}' avec la valeur '{value}' existe déjà.",
+    "VALIDATION_ERROR": {
+      "FIELD": "{field} est invalide.",
+      "MISSING": "{field} est manquant.",
+      "FORMAT": "{field} a un format incorrect.",
+      "RANGE": "{field} doit être compris entre {min} et {max}.",
+      "DEFAULT": "Échec de la validation.",
+      "UNEXPECTED": "{message}",
+      "UNEXPECTED_MESSAGE": "Une erreur inattendue s'est produite : {message}"
+    }
+  },
+  "GENERAL": {
+    "LOADING": "Chargement des données de {entity}...",
+    "RETRY": "Réessayer",
+    "REFRESH": "Actualiser les données",
+    "ACTION_FAILED": "L'action n'a pas pu être réalisée.",
+    "NO_RESULTS": "Aucun résultat trouvé."
+  }
+}

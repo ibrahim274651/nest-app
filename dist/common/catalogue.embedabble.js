@@ -8,25 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NestedCatalogDto = exports.NestedCatalogSchema = exports.NestedCatalog = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const mongoose_2 = require("mongoose");
-const catalogue_entity_1 = require("src/modules/produits/catalogue/entities/catalogue.entity");
 let NestedCatalog = class NestedCatalog extends mongoose_2.Document {
     image;
 };
 exports.NestedCatalog = NestedCatalog;
 __decorate([
-    (0, mongoose_1.Prop)({
-        type: mongoose_2.default.Schema.Types.ObjectId,
-        ref: catalogue_entity_1.Catalogue.name,
-        required: true,
-    }),
-    __metadata("design:type", typeof (_a = typeof catalogue_entity_1.Catalogue !== "undefined" && catalogue_entity_1.Catalogue) === "function" ? _a : Object)
+    (0, mongoose_1.Prop)({ type: mongoose_2.Types.ObjectId, required: false }),
+    __metadata("design:type", mongoose_2.Types.ObjectId)
 ], NestedCatalog.prototype, "id", void 0);
 __decorate([
     (0, mongoose_1.Prop)({ required: true, type: String, default: '' }),

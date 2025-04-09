@@ -1,17 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsMongoId, IsBoolean } from 'class-validator';
-import mongoose, { Document } from 'mongoose';
-import { Article } from 'src/modules/produits/articles/entities/article.entity';
+import { Document, Types } from 'mongoose';
 
 @Schema({ _id: false })
 export class NestedArticle extends Document {
-  @Prop({
-    type: mongoose.Schema.Types.ObjectId,
-    ref: Article.name,
-    required: false,
-  })
-  articleId: Article;
+  @Prop({ type: Types.ObjectId, required: false })
+  articleId: Types.ObjectId;
 
   @Prop({ required: true, type: Boolean, default: false })
   achat: boolean;

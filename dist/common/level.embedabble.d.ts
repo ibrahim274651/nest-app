@@ -1,15 +1,13 @@
-import mongoose, { Document } from 'mongoose';
-import { Article } from '@/modules/produits/articles/entities/article.entity';
-import { MenuStage } from '@/modules/produits/menu-stage/entities/menu-stage.entity';
+import { Document, Types } from 'mongoose';
 export declare class Niveaux extends Document {
-    niveauId: MenuStage;
-    articleIds: Article[];
+    niveauId: Types.ObjectId;
+    articleIds: Types.ObjectId[];
 }
-export declare const NiveauxSchema: mongoose.Schema<Niveaux, mongoose.Model<Niveaux, any, any, any, mongoose.Document<unknown, any, Niveaux> & Niveaux & Required<{
+export declare const NiveauxSchema: import("mongoose").Schema<Niveaux, import("mongoose").Model<Niveaux, any, any, any, Document<unknown, any, Niveaux> & Niveaux & Required<{
     _id: unknown;
 }> & {
     __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, Niveaux, mongoose.Document<unknown, {}, mongoose.FlatRecord<Niveaux>> & mongoose.FlatRecord<Niveaux> & Required<{
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Niveaux, Document<unknown, {}, import("mongoose").FlatRecord<Niveaux>> & import("mongoose").FlatRecord<Niveaux> & Required<{
     _id: unknown;
 }> & {
     __v: number;

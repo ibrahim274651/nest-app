@@ -2,11 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiConstants = exports.SwaggerConstants = void 0;
 exports.SwaggerConstants = {
-    title: 'Gestion des stocks',
-    customTitle: 'Gestion des stocks',
-    termsOfService: "La gestion des stocks désigne l'ensemble des processus et des pratiques permettant de superviser et de contrôler l'inventaire des biens ou des matériaux d'une entreprise.",
-    description: "La gestion des stocks désigne l'ensemble des processus et des pratiques permettant de superviser et de contrôler l'inventaire des biens ou des matériaux d'une entreprise. C'est un aspect crucial pour assurer un équilibre entre l'offre et la demande, tout en minimisant les coûts associés à la détention de stocks.",
-    logger: 'Stock management is running on',
+    title: 'Gestion des articles - Resto-Bar',
+    customTitle: 'Gestion des articles - Resto-Bar',
+    termsOfService: "La gestion des articles dans un resto-bar englobe l'ensemble des pratiques visant à organiser, suivre et optimiser les produits alimentaires, boissons et fournitures nécessaires à l'activité quotidienne.",
+    description: 'Ce module permet une gestion efficace des articles dans un environnement de restauration-bar, incluant le suivi la catégorisation des produits.',
 };
 exports.ApiConstants = {
     crud: (entityName, any) => {

@@ -1,18 +1,16 @@
-import mongoose, { Document } from 'mongoose';
-import { Tarrification } from 'src/modules/bases/tarrification/entities/tarrification.entity';
-import { Tva } from 'src/modules/bases/tva/entities/tva.entity';
+import { Document, Types } from 'mongoose';
 export declare class NestedTarification extends Document {
-    tarificationId: Tarrification;
+    tarificationId: Types.ObjectId;
     caisse: boolean;
-    tvaId: Tva;
+    tvaId: Types.ObjectId;
     prixTTC: number;
     prixHT: number;
 }
-export declare const NestedTarificationSchema: mongoose.Schema<NestedTarification, mongoose.Model<NestedTarification, any, any, any, mongoose.Document<unknown, any, NestedTarification> & NestedTarification & Required<{
+export declare const NestedTarificationSchema: import("mongoose").Schema<NestedTarification, import("mongoose").Model<NestedTarification, any, any, any, Document<unknown, any, NestedTarification> & NestedTarification & Required<{
     _id: unknown;
 }> & {
     __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, NestedTarification, mongoose.Document<unknown, {}, mongoose.FlatRecord<NestedTarification>> & mongoose.FlatRecord<NestedTarification> & Required<{
+}, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, NestedTarification, Document<unknown, {}, import("mongoose").FlatRecord<NestedTarification>> & import("mongoose").FlatRecord<NestedTarification> & Required<{
     _id: unknown;
 }> & {
     __v: number;

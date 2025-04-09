@@ -3,7 +3,6 @@ export declare const SwaggerConstants: {
     customTitle: string;
     termsOfService: string;
     description: string;
-    logger: string;
 };
 export declare const ApiConstants: {
     crud: (entityName: string, any?: string) => {

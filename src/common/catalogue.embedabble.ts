@@ -1,17 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsMongoId, IsString } from 'class-validator';
-import mongoose, { Document } from 'mongoose';
-import { Catalogue } from 'src/modules/produits/catalogue/entities/catalogue.entity';
+import { Document, Types } from 'mongoose';
 
 @Schema({ _id: false })
 export class NestedCatalog extends Document {
-  @Prop({
-    type: mongoose.Schema.Types.ObjectId,
-    ref: Catalogue.name,
-    required: true,
-  })
-  declare id: Catalogue;
+  @Prop({ type: Types.ObjectId, required: false })
+  declare id: Types.ObjectId;
 
   @Prop({ required: true, type: String, default: '' })
   image: string;

@@ -1,0 +1,22 @@
+{
+  "HELLO": "Hello",
+  "PAGINATION": "Invalid pagination options provided",
+  "CATEGORIE": {
+    "unmatch": "The chosen category does not correspond to any {entity}."
+  },
+  "ARTICLE": {
+    "unmatch": "The chosen category does not correspond to any item.",
+    "prixTTC": "Selling price must be a positive number.",
+    "price": "Selling price must be greater than purchase price.",
+    "vat": "The VAT rate must be a positive number."
+  },
+  "ACCOMPAGNEMENT": {
+    "unmatch": "The chosen add-on does not correspond to any item."
+  },
+  "MENU": {
+    "unmatch": "The chosen menu does not correspond to any item."
+  },
+  "STOCK": {
+    "MINI": "Stock mini must be greater than zero"
+  }
+}
