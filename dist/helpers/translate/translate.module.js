@@ -8,14 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TranslateModule = void 0;
 const common_1 = require("@nestjs/common");
-const translate_service_1 = require("./translate.service");
-const core_1 = require("@nestjs/core");
-const translate_interceptor_1 = require("./translate.interceptor");
-const nestjs_i18n_1 = require("nestjs-i18n");
+const path = require("path");
 const response_i18n_service_1 = require("./server-response/response-i18n.service");
-const path_1 = require("path");
-const i18nPath = path_1.default.join(__dirname, '../../helpers/translate');
-const typeSafety = path_1.default.join(__dirname, '../../../src/helpers/translate/generated/i18n.generated.ts');
+const translate_service_1 = require("./translate.service");
+const nestjs_i18n_1 = require("nestjs-i18n");
+const i18nPath = path.join(__dirname, '../../helpers/translate');
+const typeSafety = path.join(__dirname, '../../../src/helpers/translate/generated/i18n.generated.ts');
 let TranslateModule = class TranslateModule {
 };
 exports.TranslateModule = TranslateModule;
@@ -37,14 +35,7 @@ exports.TranslateModule = TranslateModule = __decorate([
                 ],
             }),
         ],
-        providers: [
-            translate_service_1.TranslateService,
-            response_i18n_service_1.ResponseI18nService,
-            {
-                provide: core_1.APP_INTERCEPTOR,
-                useClass: translate_interceptor_1.TranslateInterceptor,
-            },
-        ],
+        providers: [translate_service_1.TranslateService, response_i18n_service_1.ResponseI18nService],
         exports: [translate_service_1.TranslateService, response_i18n_service_1.ResponseI18nService],
     })
 ], TranslateModule);

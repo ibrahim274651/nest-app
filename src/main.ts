@@ -1,5 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { json } from 'express';
 import { join } from 'path';
 import mongoose from 'mongoose';
@@ -9,6 +8,7 @@ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.int
 import { ValidationPipe } from '@nestjs/common';
 import { MonitoringInterceptor } from './helpers/monitoring/monitoring.interceptor';
 import { swaggerConfiguration } from './helpers/swagger/swagger';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const PORT = process.env.PORT ?? 5000;
@@ -38,7 +38,7 @@ async function bootstrap() {
   app.enableCors(corsOptions);
   app.use(json({ limit: '50mb' }));
   app.useStaticAssets(join(__dirname, '..', 'src', 'uploads'), {
-    // prefix: '/uploads',
+    prefix: '/uploads',
   });
 
   await app.listen(PORT, () => {

@@ -1,15 +1,13 @@
 import { Global, Module } from '@nestjs/common';
+import * as path from 'path';
+import { ResponseI18nService } from './server-response/response-i18n.service';
 import { TranslateService } from './translate.service';
-import { APP_INTERCEPTOR } from '@nestjs/core';
-import { TranslateInterceptor } from './translate.interceptor';
 import {
   I18nModule,
   QueryResolver,
   AcceptLanguageResolver,
   HeaderResolver,
 } from 'nestjs-i18n';
-import { ResponseI18nService } from './server-response/response-i18n.service';
-import path from 'path';
 
 const i18nPath = path.join(__dirname, '../../helpers/translate');
 const typeSafety = path.join(
@@ -34,14 +32,7 @@ const typeSafety = path.join(
       ],
     }),
   ],
-  providers: [
-    TranslateService,
-    ResponseI18nService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: TranslateInterceptor,
-    },
-  ],
+  providers: [TranslateService, ResponseI18nService],
   exports: [TranslateService, ResponseI18nService],
 })
 export class TranslateModule {}

@@ -14,28 +14,13 @@ export declare class TranslateService {
         PROMOTION: string;
         CATEGORY: string;
         CUISSON: string;
-        categories: string;
         CATALOGUE: string;
         ARTICLE: string;
         MENU_STAGE: string;
         MENU: string;
         ACCOMPAGNEMENT: string;
         FABRICATION: string;
-        STORE: string;
-        FROM_STORE: string;
-        TO_STORE: string;
-        FOURNISSEUR: string;
         UNITE_MESURE: string;
-        MOVEMENT_ENTREE: string;
-        MOVEMENT_SORTIE: string;
-        MOVEMENT_DETAIL: string;
-        INVENTAIRE: string;
-        INVENTAIRE_DETAIL: string;
-        TRANSFERT: string;
-        PURCHASE_REQUEST: string;
-        PURCHASE_REQUEST_DETAIL: string;
-        SUPPLIER_INVOICE: string;
-        INVOICE_ITEM: string;
     } | {
         FILE: string;
         _id: string;
@@ -58,28 +43,13 @@ export declare class TranslateService {
             "PROMOTION": string;
             "CATEGORY": string;
             "CUISSON": string;
-            "categories": string;
             "CATALOGUE": string;
             "ARTICLE": string;
             "MENU_STAGE": string;
             "MENU": string;
             "ACCOMPAGNEMENT": string;
             "FABRICATION": string;
-            "STORE": string;
-            "FROM_STORE": string;
-            "TO_STORE": string;
-            "FOURNISSEUR": string;
             "UNITE_MESURE": string;
-            "MOVEMENT_ENTREE": string;
-            "MOVEMENT_SORTIE": string;
-            "MOVEMENT_DETAIL": string;
-            "INVENTAIRE": string;
-            "INVENTAIRE_DETAIL": string;
-            "TRANSFERT": string;
-            "PURCHASE_REQUEST": string;
-            "PURCHASE_REQUEST_DETAIL": string;
-            "SUPPLIER_INVOICE": string;
-            "INVOICE_ITEM": string;
         };
         FIELD: {
             "FILE": string;
@@ -400,27 +370,6 @@ export declare class TranslateService {
     } | {
         MINI: string;
     } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
-    } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
-    } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
-    } | {
         PAGINATION: string;
         GENERAL: {
             "badRequest": string;
@@ -490,31 +439,6 @@ export declare class TranslateService {
         STOCK: {
             "MINI": string;
         };
-        TRANSFERT: {
-            "update_failed": string;
-            "delete_failed": string;
-            "inquire_failed": string;
-            "invalid_status": string;
-            "partial_received": string;
-            "insufficient_stock": string;
-        };
-        PURCHASE_REQUEST: {
-            "update_failed": string;
-            "delete_failed": string;
-            "inquire_failed": string;
-            "invalid_status": string;
-            "partial_received": string;
-            "insufficient_stock": string;
-        };
-        SUPPLIER: {
-            "update_failed": string;
-            "delete_failed": string;
-            "inquire_failed": string;
-            "invalid_status": string;
-            "partial_received": string;
-            "insufficient_stock": string;
-        };
-        HELLO: string;
     };
     lang(): SupportedLang;
 }

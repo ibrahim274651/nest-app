@@ -6,15 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppService = void 0;
+exports.GlobalMiddleware = void 0;
 const common_1 = require("@nestjs/common");
-let AppService = class AppService {
-    getHello() {
-        return 'Hello World!';
+let GlobalMiddleware = class GlobalMiddleware {
+    use(req, res, next) {
+        console.log(`[Global Middleware] ${req.method} ${req.originalUrl}`);
+        res.setHeader('X-Powered-By', 'NestJS');
+        next();
     }
 };
-exports.AppService = AppService;
-exports.AppService = AppService = __decorate([
+exports.GlobalMiddleware = GlobalMiddleware;
+exports.GlobalMiddleware = GlobalMiddleware = __decorate([
     (0, common_1.Injectable)()
-], AppService);
-//# sourceMappingURL=app.service.js.map
+], GlobalMiddleware);
+//# sourceMappingURL=global.middleware.js.map

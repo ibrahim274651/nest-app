@@ -6,17 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TranslateInterceptor = void 0;
+exports.DomainModule = void 0;
 const common_1 = require("@nestjs/common");
-let TranslateInterceptor = class TranslateInterceptor {
-    intercept(context, next) {
-        const request = context.switchToHttp().getRequest();
-        request.lang = request.headers['accept-language'] || 'en';
-        return next.handle();
-    }
+let DomainModule = class DomainModule {
 };
-exports.TranslateInterceptor = TranslateInterceptor;
-exports.TranslateInterceptor = TranslateInterceptor = __decorate([
-    (0, common_1.Injectable)()
-], TranslateInterceptor);
-//# sourceMappingURL=translate.interceptor.js.map
+exports.DomainModule = DomainModule;
+exports.DomainModule = DomainModule = __decorate([
+    (0, common_1.Global)(),
+    (0, common_1.Module)({
+        imports: [],
+        controllers: [],
+    })
+], DomainModule);
+//# sourceMappingURL=domain.module.js.map

@@ -10,8 +10,10 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const mongoose_1 = require("@nestjs/mongoose");
-const path_1 = require("path");
 const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
+const app_helpers_module_1 = require("./helpers/app.helpers.module");
+const domain_module_1 = require("./modules/domain.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -22,8 +24,11 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forRoot(process.env.DB_URL || ''),
             serve_static_1.ServeStaticModule.forRoot({ rootPath: (0, path_1.join)(__dirname, '..', 'uploads') }),
+            app_helpers_module_1.AppHelpersModule,
+            domain_module_1.DomainModule,
         ],
-        controllers: [],
+        providers: [],
+        exports: [],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
