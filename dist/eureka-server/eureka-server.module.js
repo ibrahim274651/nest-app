@@ -8,27 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EurekaServerModule = void 0;
 const common_1 = require("@nestjs/common");
-const nestjs_eureka_1 = require("nestjs-eureka");
 let EurekaServerModule = class EurekaServerModule {
 };
 exports.EurekaServerModule = EurekaServerModule;
 exports.EurekaServerModule = EurekaServerModule = __decorate([
     (0, common_1.Module)({
-        imports: [
-            nestjs_eureka_1.EurekaModule.forRoot({
-                eureka: {
-                    host: 'payall-serveur-decouverte-service',
-                    port: 8761,
-                    registryFetchInterval: 3000,
-                    servicePath: '/eureka/apps/',
-                    maxRetries: 3,
-                },
-                service: {
-                    name: 'payall-gestion-commande-service',
-                    port: 3030,
-                },
-            }),
-        ],
+        imports: [],
     })
 ], EurekaServerModule);
 //# sourceMappingURL=eureka-server.module.js.map

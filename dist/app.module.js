@@ -14,6 +14,7 @@ const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
 const app_helpers_module_1 = require("./helpers/app.helpers.module");
 const domain_module_1 = require("./modules/domain.module");
+const eureka_server_module_1 = require("./eureka-server/eureka-server.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -24,6 +25,7 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot(),
             mongoose_1.MongooseModule.forRoot(process.env.DB_URL || ''),
             serve_static_1.ServeStaticModule.forRoot({ rootPath: (0, path_1.join)(__dirname, '..', 'uploads') }),
+            eureka_server_module_1.EurekaServerModule,
             app_helpers_module_1.AppHelpersModule,
             domain_module_1.DomainModule,
         ],

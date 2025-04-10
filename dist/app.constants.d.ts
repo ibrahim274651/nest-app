@@ -4,8 +4,23 @@ export declare const SwaggerConstants: {
     termsOfService: string;
     description: string;
 };
-export declare const ApiConstants: {
-    crud: (entityName: string, any?: string) => {
+export declare const ApiHelperConstants: {
+    crud: (entityName: string, relatedEntity?: string) => {
+        auth: {
+            login: {
+                summary: string;
+                response200: string;
+                response401: string;
+            };
+            logout: {
+                summary: string;
+                response200: string;
+            };
+            refresh: {
+                summary: string;
+                response200: string;
+            };
+        };
         create: {
             summary: string;
             bodyDescription: string;
@@ -14,9 +29,8 @@ export declare const ApiConstants: {
         };
         findAll: {
             summary: string;
-            summary_withoutPagination: string;
-            summary_withOtherEntity: string;
-            summary_any: string;
+            summaryListAll: string;
+            summaryListByRelatedEntity: string | undefined;
             response200: string;
             response400: string;
         };
@@ -52,7 +66,32 @@ export declare const ApiConstants: {
             summary: string;
             response204: string;
         };
-        summary: string;
-        description: string;
+        dropdown: {
+            summary: string;
+            description: string;
+            response200: string;
+        };
+        dropdownByRelation: {
+            summary: string;
+            description: string;
+            response200: string;
+            response400: string;
+            response404: string;
+        } | undefined;
+        assign: {
+            summary: string;
+            description: string;
+            response200: string;
+            response400: string;
+        } | undefined;
+        revoke: {
+            summary: string;
+            description: string;
+            response200: string;
+            response400: string;
+            response404: string;
+        } | undefined;
+        summaryCustom: string | undefined;
+        descriptionCustom: string | undefined;
     };
 };

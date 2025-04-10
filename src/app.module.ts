@@ -5,6 +5,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AppHelpersModule } from './helpers/app.helpers.module';
 import { DomainModule } from './modules/domain.module';
+import { EurekaServerModule } from './eureka-server/eureka-server.module';
 
 @Global()
 @Module({
@@ -12,7 +13,7 @@ import { DomainModule } from './modules/domain.module';
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.DB_URL || ''),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'uploads') }),
-    // EurekaServerModule,
+    EurekaServerModule,
     // GrpcApiModule,
     AppHelpersModule,
     DomainModule,
