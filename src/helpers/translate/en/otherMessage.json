@@ -67,29 +67,5 @@
   },
   "STOCK": {
     "MINI": "Stock mini must be greater than zero"
-  },
-  "TRANSFERT": {
-    "update_failed": "You cannot update this transfer because it has already been approved.",
-    "delete_failed": "You cannot delete this transfer because it has already been processed.",
-    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
-    "invalid_status": "The provided status is invalid.",
-    "partial_received": "The transfer has been partially received.",
-    "insufficient_stock": "Insufficient stock for transfer."
-  },
-  "PURCHASE_REQUEST": {
-    "update_failed": "You cannot update this purchase request because it has already been approved.",
-    "delete_failed": "You cannot delete this purchase request because it has already been processed.",
-    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
-    "invalid_status": "The provided status is invalid.",
-    "partial_received": "The purchase request has been partially received.",
-    "insufficient_stock": "Insufficient stock for purchase request."
-  },
-  "SUPPLIER": {
-    "update_failed": "You cannot update this invoice  because it has already been approved.",
-    "delete_failed": "You cannot delete this invoice  because it has already been processed.",
-    "inquire_failed": "Received quantity cannot be greater than the requested quantity for ${entity}.",
-    "invalid_status": "The provided status is invalid.",
-    "partial_received": "The invoice supplier has been partially received.",
-    "insufficient_stock": "Insufficient stock for invoice ."
   }
 }
