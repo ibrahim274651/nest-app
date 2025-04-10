@@ -9,49 +9,6 @@ export declare class TranslateService {
     constructor(request: Request, i18nService: I18nService<I18nTranslations>);
     t(key: string): string;
     translate(key: I18nPath, options?: Record<string, any>): string | {
-        TVA: string;
-        TARIFICATION: string;
-        PROMOTION: string;
-        CATEGORY: string;
-        CUISSON: string;
-        categories: string;
-        CATALOGUE: string;
-        ARTICLE: string;
-        MENU_STAGE: string;
-        MENU: string;
-        ACCOMPAGNEMENT: string;
-        FABRICATION: string;
-        STORE: string;
-        FROM_STORE: string;
-        TO_STORE: string;
-        FOURNISSEUR: string;
-        UNITE_MESURE: string;
-        MOVEMENT_ENTREE: string;
-        MOVEMENT_SORTIE: string;
-        MOVEMENT_DETAIL: string;
-        INVENTAIRE: string;
-        INVENTAIRE_DETAIL: string;
-        TRANSFERT: string;
-        PURCHASE_REQUEST: string;
-        PURCHASE_REQUEST_DETAIL: string;
-        SUPPLIER_INVOICE: string;
-        INVOICE_ITEM: string;
-    } | {
-        FILE: string;
-        _id: string;
-        designation: string;
-        tarification: string;
-        codeBarre: string;
-        nif: string;
-        fax: string;
-        email: string;
-        telephone: string;
-        prixttc: string;
-        prixht: string;
-        quantity: string;
-        date: string;
-        time: string;
-    } | {
         ENTITY: {
             "TVA": string;
             "TARIFICATION": string;
@@ -98,143 +55,48 @@ export declare class TranslateService {
             "time": string;
         };
     } | {
-        SUCCESS: string;
-        ERROR: string;
-        UNAUTHORIZED: string;
-        VALIDATION_ERROR: string;
+        TVA: string;
+        TARIFICATION: string;
+        PROMOTION: string;
+        CATEGORY: string;
+        CUISSON: string;
+        categories: string;
+        CATALOGUE: string;
+        ARTICLE: string;
+        MENU_STAGE: string;
+        MENU: string;
+        ACCOMPAGNEMENT: string;
+        FABRICATION: string;
+        STORE: string;
+        FROM_STORE: string;
+        TO_STORE: string;
+        FOURNISSEUR: string;
+        UNITE_MESURE: string;
+        MOVEMENT_ENTREE: string;
+        MOVEMENT_SORTIE: string;
+        MOVEMENT_DETAIL: string;
+        INVENTAIRE: string;
+        INVENTAIRE_DETAIL: string;
+        TRANSFERT: string;
+        PURCHASE_REQUEST: string;
+        PURCHASE_REQUEST_DETAIL: string;
+        SUPPLIER_INVOICE: string;
+        INVOICE_ITEM: string;
     } | {
-        SUCCESS: string;
-        EMPTY: string;
-        PARTIAL_SUCCESS: string;
-        ERROR: string;
-        UNAUTHORIZED: string;
-        NOT_FOUND: string;
-        VALIDATION_ERROR: string;
-    } | {
-        SUCCESS: string;
-        NOT_FOUND: string;
-        UNAUTHORIZED: string;
-        ERROR: string;
-        VALIDATION_ERROR: string;
-    } | {
-        SUCCESS: string;
-        NOT_FOUND: string;
-        UNAUTHORIZED: string;
-        ERROR: string;
-        CONFIRMATION: string;
-    } | {
-        CREATE: {
-            "SUCCESS": string;
-            "ERROR": string;
-            "UNAUTHORIZED": string;
-            "VALIDATION_ERROR": string;
-        };
-        READ: {
-            "SUCCESS": string;
-            "EMPTY": string;
-            "PARTIAL_SUCCESS": string;
-            "ERROR": string;
-            "UNAUTHORIZED": string;
-            "NOT_FOUND": string;
-            "VALIDATION_ERROR": string;
-        };
-        UPDATE: {
-            "SUCCESS": string;
-            "NOT_FOUND": string;
-            "UNAUTHORIZED": string;
-            "ERROR": string;
-            "VALIDATION_ERROR": string;
-        };
-        DELETE: {
-            "SUCCESS": string;
-            "NOT_FOUND": string;
-            "UNAUTHORIZED": string;
-            "ERROR": string;
-            "CONFIRMATION": string;
-        };
-    } | {
-        SUCCESS: string;
-        ERROR: string;
-        UNAUTHORIZED: string;
-    } | {
-        SUCCESS: string;
-        ERROR: string;
-    } | {
-        LOGIN: {
-            "SUCCESS": string;
-            "ERROR": string;
-            "UNAUTHORIZED": string;
-        };
-        LOGOUT: {
-            "SUCCESS": string;
-            "ERROR": string;
-        };
-        FORBIDDEN: string;
-        EXPIRED_TOKEN: string;
-    } | {
-        ACCESS_DENIED: string;
-        MISSING_ROLE: string;
-    } | {
-        REQUIRED: string;
-        INVALID: string;
-        MIN_LENGTH: string;
-        MAX_LENGTH: string;
-    } | {
-        FIELD: string;
-        MISSING: string;
-        FORMAT: string;
-        RANGE: string;
-        DEFAULT: string;
-        UNEXPECTED: string;
-        UNEXPECTED_MESSAGE: string;
-    } | {
-        GENERAL: string;
-        INVALID_INPUT: string;
-        INVALID_DATA: string;
-        INVALID_ID: string;
-        NOT_FOUND: string;
-        NO_DATA: string;
-        UNAUTHORIZED: string;
-        FORBIDDEN: string;
-        CONNECTION: string;
-        SERVICE_UNAVAILABLE: string;
-        CONNECTION_RESET: string;
-        TIMEOUT: string;
-        SERVER_ERROR: string;
-        CONFLICT: string;
-        VALIDATION_ERROR: {
-            "FIELD": string;
-            "MISSING": string;
-            "FORMAT": string;
-            "RANGE": string;
-            "DEFAULT": string;
-            "UNEXPECTED": string;
-            "UNEXPECTED_MESSAGE": string;
-        };
-    } | {
-        LOADING: string;
-        ACTION_SUCCESS: string;
-        ACTION_ERROR: string;
-        RETRY: string;
-        LOADING_DATA: string;
-        RETRY_ACTION: string;
-        REFRESH_DATA: string;
-        ACTION_FAILED: string;
-        NO_RESULTS_FOUND: string;
-    } | {
-        SUCCESS: string;
-        EMPTY: string;
-        PARTIAL_SUCCESS: string;
-        ERROR: string;
-        UNAUTHORIZED: string;
-        NOT_FOUND: string;
-        VALIDATION_ERROR: string;
-    } | {
-        LOADING: string;
-        RETRY: string;
-        REFRESH: string;
-        ACTION_FAILED: string;
-        NO_RESULTS: string;
+        FILE: string;
+        _id: string;
+        designation: string;
+        tarification: string;
+        codeBarre: string;
+        nif: string;
+        fax: string;
+        email: string;
+        telephone: string;
+        prixttc: string;
+        prixht: string;
+        quantity: string;
+        date: string;
+        time: string;
     } | {
         CRUD: {
             "CREATE": {
@@ -343,83 +205,143 @@ export declare class TranslateService {
             "NO_RESULTS": string;
         };
     } | {
-        badRequest: string;
-        notFound: string;
-        invalidId: string;
-        unmatch: string;
-        notFoundManyData: string;
-    } | {
-        invalidId: string;
-        validateYear: string;
-    } | {
-        invalidId: string;
-        inUsed: string;
-        inUsedWithModels: string;
-    } | {
-        badRequest: string;
-        notFound: string;
-        invalidId: string;
-    } | {
-        badRequest: string;
-        notFound: string;
-        invalidId: string;
-    } | {
-        NOTFOUND: string;
-        PROMOTION_EXIST: string;
-        DATE_VALIDATION: string;
-        DATE_REQUIRED: string;
-        BONUS_REQUIRED: string;
-    } | {
-        required: string;
-        badRequest: string;
-        notFound: string;
-        invalidIds: string;
-        invalidId: string;
-    } | {
-        badRequest: string;
-        notFound: string;
-        invalidId: string;
-    } | {
-        unmatch: string;
-    } | {
-        unmatch: string;
-        prixTTC: string;
-        price: string;
-        invalid_items: string;
-        vat: string;
-    } | {
-        unmatch: string;
-        notFound: string;
-    } | {
-        generic: string;
-    } | {
-        unmatch: string;
-        tarification: {
-            "generic": string;
+        CREATE: {
+            "SUCCESS": string;
+            "ERROR": string;
+            "UNAUTHORIZED": string;
+            "VALIDATION_ERROR": string;
+        };
+        READ: {
+            "SUCCESS": string;
+            "EMPTY": string;
+            "PARTIAL_SUCCESS": string;
+            "ERROR": string;
+            "UNAUTHORIZED": string;
+            "NOT_FOUND": string;
+            "VALIDATION_ERROR": string;
+        };
+        UPDATE: {
+            "SUCCESS": string;
+            "NOT_FOUND": string;
+            "UNAUTHORIZED": string;
+            "ERROR": string;
+            "VALIDATION_ERROR": string;
+        };
+        DELETE: {
+            "SUCCESS": string;
+            "NOT_FOUND": string;
+            "UNAUTHORIZED": string;
+            "ERROR": string;
+            "CONFIRMATION": string;
         };
     } | {
-        MINI: string;
+        SUCCESS: string;
+        ERROR: string;
+        UNAUTHORIZED: string;
+        VALIDATION_ERROR: string;
     } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
+        SUCCESS: string;
+        EMPTY: string;
+        PARTIAL_SUCCESS: string;
+        ERROR: string;
+        UNAUTHORIZED: string;
+        NOT_FOUND: string;
+        VALIDATION_ERROR: string;
     } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
+        SUCCESS: string;
+        NOT_FOUND: string;
+        UNAUTHORIZED: string;
+        ERROR: string;
+        VALIDATION_ERROR: string;
     } | {
-        update_failed: string;
-        delete_failed: string;
-        inquire_failed: string;
-        invalid_status: string;
-        partial_received: string;
-        insufficient_stock: string;
+        SUCCESS: string;
+        NOT_FOUND: string;
+        UNAUTHORIZED: string;
+        ERROR: string;
+        CONFIRMATION: string;
+    } | {
+        LOGIN: {
+            "SUCCESS": string;
+            "ERROR": string;
+            "UNAUTHORIZED": string;
+        };
+        LOGOUT: {
+            "SUCCESS": string;
+            "ERROR": string;
+        };
+        FORBIDDEN: string;
+        EXPIRED_TOKEN: string;
+    } | {
+        SUCCESS: string;
+        ERROR: string;
+        UNAUTHORIZED: string;
+    } | {
+        SUCCESS: string;
+        ERROR: string;
+    } | {
+        ACCESS_DENIED: string;
+        MISSING_ROLE: string;
+    } | {
+        REQUIRED: string;
+        INVALID: string;
+        MIN_LENGTH: string;
+        MAX_LENGTH: string;
+    } | {
+        GENERAL: string;
+        INVALID_INPUT: string;
+        INVALID_DATA: string;
+        INVALID_ID: string;
+        NOT_FOUND: string;
+        NO_DATA: string;
+        UNAUTHORIZED: string;
+        FORBIDDEN: string;
+        CONNECTION: string;
+        SERVICE_UNAVAILABLE: string;
+        CONNECTION_RESET: string;
+        TIMEOUT: string;
+        SERVER_ERROR: string;
+        CONFLICT: string;
+        VALIDATION_ERROR: {
+            "FIELD": string;
+            "MISSING": string;
+            "FORMAT": string;
+            "RANGE": string;
+            "DEFAULT": string;
+            "UNEXPECTED": string;
+            "UNEXPECTED_MESSAGE": string;
+        };
+    } | {
+        FIELD: string;
+        MISSING: string;
+        FORMAT: string;
+        RANGE: string;
+        DEFAULT: string;
+        UNEXPECTED: string;
+        UNEXPECTED_MESSAGE: string;
+    } | {
+        LOADING: string;
+        ACTION_SUCCESS: string;
+        ACTION_ERROR: string;
+        RETRY: string;
+        LOADING_DATA: string;
+        RETRY_ACTION: string;
+        REFRESH_DATA: string;
+        ACTION_FAILED: string;
+        NO_RESULTS_FOUND: string;
+    } | {
+        SUCCESS: string;
+        EMPTY: string;
+        PARTIAL_SUCCESS: string;
+        ERROR: string;
+        UNAUTHORIZED: string;
+        NOT_FOUND: string;
+        VALIDATION_ERROR: string;
+    } | {
+        LOADING: string;
+        RETRY: string;
+        REFRESH: string;
+        ACTION_FAILED: string;
+        NO_RESULTS: string;
     } | {
         PAGINATION: string;
         GENERAL: {
@@ -515,6 +437,84 @@ export declare class TranslateService {
             "insufficient_stock": string;
         };
         HELLO: string;
+    } | {
+        badRequest: string;
+        notFound: string;
+        invalidId: string;
+    } | {
+        required: string;
+        badRequest: string;
+        notFound: string;
+        invalidIds: string;
+        invalidId: string;
+    } | {
+        NOTFOUND: string;
+        PROMOTION_EXIST: string;
+        DATE_VALIDATION: string;
+        DATE_REQUIRED: string;
+        BONUS_REQUIRED: string;
+    } | {
+        badRequest: string;
+        notFound: string;
+        invalidId: string;
+    } | {
+        invalidId: string;
+        inUsed: string;
+        inUsedWithModels: string;
+    } | {
+        unmatch: string;
+        prixTTC: string;
+        price: string;
+        invalid_items: string;
+        vat: string;
+    } | {
+        unmatch: string;
+        tarification: {
+            "generic": string;
+        };
+    } | {
+        generic: string;
+    } | {
+        unmatch: string;
+        notFound: string;
+    } | {
+        badRequest: string;
+        notFound: string;
+        invalidId: string;
+    } | {
+        update_failed: string;
+        delete_failed: string;
+        inquire_failed: string;
+        invalid_status: string;
+        partial_received: string;
+        insufficient_stock: string;
+    } | {
+        update_failed: string;
+        delete_failed: string;
+        inquire_failed: string;
+        invalid_status: string;
+        partial_received: string;
+        insufficient_stock: string;
+    } | {
+        badRequest: string;
+        notFound: string;
+        invalidId: string;
+        unmatch: string;
+        notFoundManyData: string;
+    } | {
+        invalidId: string;
+        validateYear: string;
+    } | {
+        unmatch: string;
+    } | {
+        MINI: string;
+    } | {
+        update_failed: string;
+        delete_failed: string;
+        inquire_failed: string;
+        invalid_status: string;
+        partial_received: string;
+        insufficient_stock: string;
     };
     lang(): SupportedLang;
 }
