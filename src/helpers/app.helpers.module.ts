@@ -7,6 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 @Global()
 @Module({
   imports: [TranslateModule, ResponseHelpersModule],
+  controllers: [],
   providers: [AppHelperService, JwtService],
   exports: [AppHelperService, JwtService],
 })

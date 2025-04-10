@@ -35,6 +35,7 @@ exports.TranslateModule = TranslateModule = __decorate([
                 ],
             }),
         ],
+        controllers: [],
         providers: [translate_service_1.TranslateService, response_i18n_service_1.ResponseI18nService],
         exports: [translate_service_1.TranslateService, response_i18n_service_1.ResponseI18nService],
     })

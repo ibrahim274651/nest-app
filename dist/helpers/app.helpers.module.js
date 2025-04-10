@@ -19,6 +19,7 @@ exports.AppHelpersModule = AppHelpersModule = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
         imports: [translate_module_1.TranslateModule, response_helpers_module_1.ResponseHelpersModule],
+        controllers: [],
         providers: [app_helper_service_1.AppHelperService, jwt_1.JwtService],
         exports: [app_helper_service_1.AppHelperService, jwt_1.JwtService],
     })

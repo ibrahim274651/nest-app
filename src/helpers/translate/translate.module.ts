@@ -32,6 +32,7 @@ const typeSafety = path.join(
       ],
     }),
   ],
+  controllers: [],
   providers: [TranslateService, ResponseI18nService],
   exports: [TranslateService, ResponseI18nService],
 })

@@ -15,6 +15,7 @@ exports.ResponseHelpersModule = ResponseHelpersModule;
 exports.ResponseHelpersModule = ResponseHelpersModule = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
+        controllers: [],
         providers: [response_helpers_service_1.ResponseHelpersService],
         exports: [response_helpers_service_1.ResponseHelpersService],
     })
