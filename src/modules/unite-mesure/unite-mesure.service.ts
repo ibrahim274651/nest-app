@@ -1,26 +1,28 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { CreateUniteMesureDto } from './dto/create-unite-mesure.dto';
+import { UpdateUniteMesureDto } from './dto/update-unite-mesure.dto';
 import { InjectModel } from '@nestjs/mongoose';
+import { UniteMesure } from './entities/unite-mesure.entity';
 import { Model } from 'mongoose';
-import { Tva } from './entities/tva.entity';
-import { CreateTvaDto } from './dto/create-tva.dto';
-import { UpdateTvaDto } from './dto/update-tva.dto';
 import { PageOptionsDto } from 'src/helpers/page-options-dto/page-options-dto';
 import { ResponseI18nService } from 'src/helpers/translate/server-response/response-i18n.service';
 import { VerificationService } from '../verification.service';
 
 @Injectable()
-export class TvaService {
-  private readonly logger = new Logger(TvaService.name);
+export class UniteMesureService {
+  private readonly logger = new Logger(UniteMesureService.name);
+
   constructor(
-    @InjectModel(Tva.name) private tvaModel: Model<Tva>,
+    @InjectModel(UniteMesure.name) private uniteMesureModel: Model<UniteMesure>,
     private readonly verificationService: VerificationService,
     private readonly responseI18nService: ResponseI18nService,
   ) {}
 
-  async create(createTvaDto: CreateTvaDto) {
+  async create(createUniteMesureDto: CreateUniteMesureDto) {
     try {
-      const createdTva = await this.tvaModel.create(createTvaDto);
-      return this.responseI18nService.create(createdTva, 'TVA');
+      const uniteMesure =
+        await this.uniteMesureModel.create(createUniteMesureDto);
+      return this.responseI18nService.create(uniteMesure, 'UNITE_MESURE');
     } catch (error) {
       this.logger.error(error);
       throw this.responseI18nService.handleError(error);
@@ -36,7 +38,7 @@ export class TvaService {
         filter.designation = { $regex: search, $options: 'i' };
       }
 
-      const results = await this.tvaModel
+      const results = await this.uniteMesureModel
         .find(filter)
         .sort({ createdAt: order === 'DESC' ? -1 : 1 })
         .skip(skip)
@@ -44,13 +46,13 @@ export class TvaService {
         .lean()
         .exec();
 
-      const itemCount = await this.tvaModel.countDocuments(filter);
+      const itemCount = await this.uniteMesureModel.countDocuments(filter);
 
       return this.responseI18nService.fetchWithPagination(
         results,
         itemCount,
         pageOptionsDto,
-        'TVA',
+        'UNITE_MESURE',
       );
     } catch (error) {
       this.logger.error(error);
@@ -58,11 +60,14 @@ export class TvaService {
     }
   }
 
-  // Tva without pagination
-  async findTva() {
+  async dropDownForUniteMesure() {
     try {
-      const results = await this.tvaModel.find().exec();
-      return this.responseI18nService.success(results, 'TVA');
+      const uniteMesure = await this.uniteMesureModel
+        .find()
+        .sort({ designation: 1 })
+        .lean();
+
+      return this.responseI18nService.success(uniteMesure, 'UNITE_MESURE');
     } catch (error) {
       this.logger.error(error);
       throw this.responseI18nService.handleError(error);
@@ -71,26 +76,26 @@ export class TvaService {
 
   async findOne(id: string) {
     try {
-      const tva = await this.tvaModel.findById(id).lean().exec();
-      if (!tva) {
+      const unite = await this.uniteMesureModel.findById(id).exec();
+      if (!unite) {
         return this.responseI18nService.notFound();
       }
-      return this.responseI18nService.success(tva, 'TVA');
+      return this.responseI18nService.success(unite, 'UNITE_MESURE');
     } catch (error) {
       this.logger.error(error);
       throw this.responseI18nService.handleError(error);
     }
   }
 
-  async update(id: string, updateTvaDto: UpdateTvaDto) {
+  async update(id: string, UpdateUniteMesureDto: UpdateUniteMesureDto) {
     try {
-      const updatedTva = await this.tvaModel
-        .findByIdAndUpdate(id, updateTvaDto, { new: true })
+      const updated = await this.uniteMesureModel
+        .findByIdAndUpdate(id, UpdateUniteMesureDto, { new: true })
         .exec();
-      if (!updatedTva) {
+      if (!updated) {
         return this.responseI18nService.notFound();
       }
-      return this.responseI18nService.update(updatedTva, 'TVA');
+      return this.responseI18nService.update(updated, 'UNITE_MESURE');
     } catch (error) {
       this.logger.error(error);
       throw this.responseI18nService.handleError(error);
@@ -99,14 +104,14 @@ export class TvaService {
 
   async remove(id: string) {
     try {
-      // Check if the tva is being used in related models
-      await this.verificationService.isTvaUsed(id);
+      // Check if the catalog is being used in related models
+      await this.verificationService.isUniteUsed(id);
 
-      const deletedTva = await this.tvaModel.findByIdAndDelete(id).exec();
-      if (!deletedTva) {
+      const deleted = await this.uniteMesureModel.findByIdAndDelete(id).exec();
+      if (!deleted) {
         return this.responseI18nService.notFound();
       }
-      return this.responseI18nService.delete(deletedTva, 'TVA');
+      return this.responseI18nService.delete(deleted, 'UNITE_MESURE');
     } catch (error) {
       this.logger.error(error);
       throw this.responseI18nService.handleError(error);
