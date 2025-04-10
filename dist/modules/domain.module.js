@@ -8,13 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DomainModule = void 0;
 const common_1 = require("@nestjs/common");
+const tva_module_1 = require("./tva/tva.module");
+const config_1 = require("@nestjs/config");
 let DomainModule = class DomainModule {
 };
 exports.DomainModule = DomainModule;
 exports.DomainModule = DomainModule = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
-        imports: [],
+        imports: [config_1.ConfigModule.forRoot(), tva_module_1.TvaModule],
         controllers: [],
     })
 ], DomainModule);

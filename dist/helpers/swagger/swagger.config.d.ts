@@ -1,2 +1,3 @@
 import { SwaggerConfig } from './swagger.interface';
-export declare const SWAGGER_CONFIG: SwaggerConfig;
+import { ConfigService } from '@nestjs/config';
+export declare const createSwaggerConfig: (configService: ConfigService) => SwaggerConfig;
