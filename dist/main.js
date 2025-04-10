@@ -22,8 +22,6 @@ async function bootstrap() {
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,
         whitelist: true,
-        forbidNonWhitelisted: true,
-        forbidUnknownValues: true,
     }));
     app.useGlobalInterceptors(new monitoring_interceptor_1.MonitoringInterceptor());
     app.useGlobalFilters(new custom_exception_1.GlobalExceptionFilter());

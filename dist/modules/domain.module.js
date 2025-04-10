@@ -10,13 +10,14 @@ exports.DomainModule = void 0;
 const common_1 = require("@nestjs/common");
 const tva_module_1 = require("./tva/tva.module");
 const config_1 = require("@nestjs/config");
+const catalogue_module_1 = require("./catalogue/catalogue.module");
 let DomainModule = class DomainModule {
 };
 exports.DomainModule = DomainModule;
 exports.DomainModule = DomainModule = __decorate([
     (0, common_1.Global)(),
     (0, common_1.Module)({
-        imports: [config_1.ConfigModule.forRoot(), tva_module_1.TvaModule],
+        imports: [config_1.ConfigModule.forRoot(), tva_module_1.TvaModule, catalogue_module_1.CatalogueModule],
         controllers: [],
     })
 ], DomainModule);
